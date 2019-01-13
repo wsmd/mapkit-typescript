@@ -18,4 +18,5 @@
 /// <reference path="./mapkit.Directions.d.ts" />
 /// <reference path="./mapkit.MapPoint.d.ts" />
 /// <reference path="./mapkit.MapRect.d.ts" />
+/// <reference path="./mapkit.MapSize.d.ts" />
 /// <reference path="./mapkit.BoundingRegion.d.ts" />
