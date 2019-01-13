@@ -21,7 +21,7 @@ declare namespace mapkit {
   function addEventListener(
     type: InitializationEventType,
     listener: (event: InitializationEvent) => void,
-    thisObject?: any,
+    thisObject?: object,
   ): void;
   /**
    * Unsubscribes a listener function from an event type.
@@ -33,7 +33,7 @@ declare namespace mapkit {
   function removeEventListener(
     type: InitializationEventType,
     listener: (event: InitializationEvent) => void,
-    thisObject?: any,
+    thisObject?: object,
   ): void;
   /**
    * A language ID indicating the selected language.
