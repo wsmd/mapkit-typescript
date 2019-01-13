@@ -27,17 +27,17 @@ declare namespace mapkit {
      * @param thisObject An object to be set as the this keyword on the listener
      * function.
      */
-    addEventListener<K extends keyof MapEvents>(
+    addEventListener<K extends keyof MapEvents<this>>(
       type: K,
-      listener: (event: MapEvents[K]) => void,
+      listener: (event: MapEvents<this>[K]) => void,
       thisObject?: object,
     ): void;
     /**
      * Removes an event listener.
      */
-    removeEventListener<K extends keyof MapEvents>(
+    removeEventListener<K extends keyof MapEvents<this>>(
       type: K,
-      listener: (event: MapEvents[K]) => void,
+      listener: (event: MapEvents<this>[K]) => void,
       thisObject?: object,
     ): void;
     /**
@@ -404,27 +404,24 @@ declare namespace mapkit {
    */
   const maps: Map[];
 
-  type MapEvent = {
+  type EventBase<T> = {
     type: string;
-    target: mapkit.Map;
+    target: T;
   };
 
-  // prettier-ignore
-  interface MapEvents {
-    'region-change-start': MapEvent;
-    'region-change-end': MapEvent;
-    'scroll-start': MapEvent;
-    'scroll-end': MapEvent;
-    'zoom-start': MapEvent;
-    'zoom-end': MapEvent;
-    'map-type-change': MapEvent;
-    'select': MapEvent & { annotation: Annotation; overlay: Overlay };
-    'deselect': MapEvent & { annotation: Annotation; overlay: Overlay };
-    'drag-start': MapEvent & { annotation: Annotation };
-    'dragging': MapEvent & { annotation: Annotation; coordinate: Coordinate };
-    'drag-end': MapEvent & { annotation: Annotation };
-    'user-location-change': MapEvent & { coordinate: Coordinate; timestamp: Date };
-    'user-location-error': MapEvent & { code: number; message: string };
+  interface UserLocationEvents<T> {
+    'user-location-change': EventBase<T> & { coordinate: Coordinate; timestamp: Date };
+    'user-location-error': EventBase<T> & { code: number; message: string };
+  }
+
+  interface MapEvents<T> extends AnnotationEvents<T>, UserLocationEvents<T> {
+    'region-change-start': EventBase<T>;
+    'region-change-end': EventBase<T>;
+    'scroll-start': EventBase<T>;
+    'scroll-end': EventBase<T>;
+    'zoom-start': EventBase<T>;
+    'zoom-end': EventBase<T>;
+    'map-type-change': EventBase<T>;
   }
 
   /**
