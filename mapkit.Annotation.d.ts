@@ -286,16 +286,13 @@ declare namespace mapkit {
     /**
      * Initializes an image annotation with a URL to its image and a coordinate.
      */
-    constructor(
-      coordinate: mapkit.Coordinate,
-      options: Partial<AnnotationConstructorOptions> & ImageAnnotationConstructorOptions,
-    );
+    constructor(coordinate: mapkit.Coordinate, options: ImageAnnotationConstructorOptions);
   }
 
   /**
    * An object containing options for initializing an image annotation.
    */
-  interface ImageAnnotationConstructorOptions {
+  interface ImageAnnotationConstructorOptions extends Partial<AnnotationConstructorOptions> {
     /**
      * An object containing URLs for the image assets in multiple resolutions.
      */
