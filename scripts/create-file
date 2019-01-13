@@ -3,12 +3,8 @@
 file="mapkit.$1.d.ts"
 index="index.d.ts"
 
-touch $file
-
 cat <<EOT >> $file
-// Type definitions for MapKit JS 5.0
-// Project: https://developer.apple.com/documentation/mapkitjs
-// Definitions by: Waseem Dahman <https://github.com/wsmd>
+$(head -3 $index)
 
 declare namespace mapkit {
   class $1 {}
@@ -16,5 +12,3 @@ declare namespace mapkit {
 EOT
 
 echo "/// <reference path=\"./$file\" />" >> $index
-
-echo "Created $file"
