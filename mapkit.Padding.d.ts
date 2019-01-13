@@ -3,6 +3,9 @@
 // Definitions by: Waseem Dahman <https://github.com/wsmd>
 
 declare namespace mapkit {
+  /**
+   * The values that define content padding within the map view frame.
+   */
   class Padding {
     /**
      * Creates a padding object, and initializes its inset margin properties.

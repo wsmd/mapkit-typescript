@@ -2,11 +2,11 @@
 // Project: https://developer.apple.com/documentation/mapkitjs
 // Definitions by: Waseem Dahman <https://github.com/wsmd>
 
-/**
- * A set of observable attributes for overlays, including color and opacity of
- * stroke and fill, and line styles.
- */
 declare namespace mapkit {
+  /**
+   * A set of observable attributes for overlays, including color and opacity of
+   * stroke and fill, and line styles.
+   */
   class Style {
     /**
      * Creates and initializes a style object.

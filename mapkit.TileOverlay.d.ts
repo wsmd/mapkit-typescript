@@ -3,6 +3,9 @@
 // Definitions by: Waseem Dahman <https://github.com/wsmd>
 
 declare namespace mapkit {
+  /**
+   * An overlay that covers an area of the map with bitmap tiles.
+   */
   class TileOverlay {
     /**
      * Creates a tile overlay with a URL template and style options.
@@ -17,7 +20,8 @@ declare namespace mapkit {
      */
     urlTemplate: string | URLTemplateCallback;
     /**
-     * Reloads the tile overlay for the displayed map region with the latest data values.
+     * Reloads the tile overlay for the displayed map region with the latest
+     * data values.
      */
     reload(): void;
     /**
