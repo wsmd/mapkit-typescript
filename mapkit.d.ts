@@ -66,6 +66,24 @@ declare namespace mapkit {
     language?: string;
   }
 
+  /**
+   * Constants indicating the visibility of different adaptive map features.
+   */
+  const FeatureVisibility: {
+    /**
+     * A constant indicating that feature visibility adapts to the current map state.
+     */
+    readonly Adaptive: string;
+    /**
+     * A constant indicating that the feature is always hidden.
+     */
+    readonly Hidden: string;
+    /**
+     * A constant indicating that the feature is always visible.
+     */
+    readonly Visible: string;
+  };
+
   type InitializationEventType = 'configuration-change' | 'error';
 
   interface InitializationEvent {
