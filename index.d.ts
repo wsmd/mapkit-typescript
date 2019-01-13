@@ -12,3 +12,4 @@
 /// <reference path="./mapkit.Overlay.d.ts" />
 /// <reference path="./mapkit.CoordinateSpan.d.ts" />
 /// <reference path="./mapkit.TileOverlay.d.ts" />
+/// <reference path="./mapkit.Style.d.ts" />
