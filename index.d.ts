@@ -15,3 +15,4 @@
 /// <reference path="./mapkit.Style.d.ts" />
 /// <reference path="./mapkit.Geocoder.d.ts" />
 /// <reference path="./mapkit.Search.d.ts" />
+/// <reference path="./mapkit.Directions.d.ts" />
