@@ -13,3 +13,4 @@
 /// <reference path="./mapkit.CoordinateSpan.d.ts" />
 /// <reference path="./mapkit.TileOverlay.d.ts" />
 /// <reference path="./mapkit.Style.d.ts" />
+/// <reference path="./mapkit.Geocoder.d.ts" />
