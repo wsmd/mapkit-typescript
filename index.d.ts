@@ -14,3 +14,4 @@
 /// <reference path="./mapkit.TileOverlay.d.ts" />
 /// <reference path="./mapkit.Style.d.ts" />
 /// <reference path="./mapkit.Geocoder.d.ts" />
+/// <reference path="./mapkit.Search.d.ts" />
