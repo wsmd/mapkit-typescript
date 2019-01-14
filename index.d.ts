@@ -20,3 +20,4 @@
 /// <reference path="./mapkit.MapRect.d.ts" />
 /// <reference path="./mapkit.MapSize.d.ts" />
 /// <reference path="./mapkit.BoundingRegion.d.ts" />
+/// <reference path="./mapkit.GeoJSON.d.ts" />
