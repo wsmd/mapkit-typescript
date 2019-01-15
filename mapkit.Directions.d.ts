@@ -69,11 +69,11 @@ declare namespace mapkit {
     /**
      * The start point for routing directions.
      */
-    origin: String | mapkit.Coordinate | mapkit.Place;
+    origin: string | mapkit.Coordinate | mapkit.Place;
     /**
      * The end point for routing directions.
      */
-    destination: String | mapkit.Coordinate | mapkit.Place;
+    destination: string | mapkit.Coordinate | mapkit.Place;
     /**
      * The mode of transportation to which directions should apply.
      */
@@ -94,7 +94,8 @@ declare namespace mapkit {
   }
 
   /**
-   * Information about a route, including step-by-step instructions, distance, and estimated travel time.
+   * Information about a route, including step-by-step instructions, distance,
+   * and estimated travel time.
    */
   interface Route {
     /**
@@ -139,11 +140,11 @@ declare namespace mapkit {
     /**
      * The written instructions for following the path represented by the step.
      */
-    instructions: String;
+    instructions: string;
     /**
      * The step distance in meters.
      */
-    distance: Number;
+    distance: number;
     /**
      * The transport type of the step.
      */

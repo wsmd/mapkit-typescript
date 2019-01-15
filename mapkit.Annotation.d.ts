@@ -296,7 +296,11 @@ declare namespace mapkit {
     /**
      * An object containing URLs for the image assets in multiple resolutions.
      */
-    url: ImageUrls;
+    url: {
+      1: string;
+      2?: string;
+      3?: string;
+    };
   }
 
   /**
@@ -362,7 +366,11 @@ declare namespace mapkit {
     /**
      * The image to display in the marker balloon.
      */
-    glyphImage: ImageUrls;
+    glyphImage: {
+      1: string;
+      2?: string;
+      3?: string;
+    };
     /**
      * The image to display in the balloon when the marker is selected.
      */
@@ -385,6 +393,4 @@ declare namespace mapkit {
     'dragging': EventBase<T> & { annotation: Annotation; coordinate: Coordinate };
     'drag-end': EventBase<T> & { annotation: Annotation };
   }
-
-  type ImageUrls = { 1: string; 2?: string; 3?: string };
 }

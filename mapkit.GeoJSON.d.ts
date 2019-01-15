@@ -32,7 +32,7 @@ declare namespace mapkit {
     itemForFeature?(
       item: mapkit.Annotation | mapkit.Overlay | null,
       geoJSON: object,
-    ): mapkit.Annotation | mapkit.Overlay | (mapkit.Annotation | mapkit.Overlay)[];
+    ): mapkit.Annotation | mapkit.Overlay | Array<mapkit.Annotation | mapkit.Overlay>;
     /**
      * Overrides a feature collection.
      *
@@ -44,7 +44,7 @@ declare namespace mapkit {
     itemForFeatureCollection?(
       itemCollection: ItemCollection,
       geoJSON: object,
-    ): mapkit.Annotation | mapkit.Overlay | (mapkit.Annotation | mapkit.Overlay)[];
+    ): mapkit.Annotation | mapkit.Overlay | Array<mapkit.Annotation | mapkit.Overlay>;
     /**
      * Overrides a line string.
      *
@@ -54,7 +54,7 @@ declare namespace mapkit {
     itemForLineString?(
       overlay: mapkit.PolylineOverlay,
       geoJSON: object,
-    ): mapkit.Annotation | mapkit.Overlay | (mapkit.Annotation | mapkit.Overlay)[];
+    ): mapkit.Annotation | mapkit.Overlay | Array<mapkit.Annotation | mapkit.Overlay>;
     /**
      * Overrides a multiline string.
      *
@@ -65,7 +65,7 @@ declare namespace mapkit {
     itemForMultiLineString?(
       itemCollection: ItemCollection,
       geoJSON: object,
-    ): mapkit.Annotation | mapkit.Overlay | (mapkit.Annotation | mapkit.Overlay)[];
+    ): mapkit.Annotation | mapkit.Overlay | Array<mapkit.Annotation | mapkit.Overlay>;
     /**
      * Overrides a point.
      *
@@ -77,7 +77,7 @@ declare namespace mapkit {
     itemForPoint?(
       coordinate: mapkit.Coordinate,
       geoJSON: object,
-    ): (mapkit.Annotation | mapkit.Overlay)[];
+    ): Array<mapkit.Annotation | mapkit.Overlay>;
     /**
      * Overrides a multipoint object.
      *
@@ -88,7 +88,7 @@ declare namespace mapkit {
     itemForMultiPoint?(
       itemCollection: ItemCollection,
       geoJSON: object,
-    ): mapkit.Annotation | mapkit.Overlay | (mapkit.Annotation | mapkit.Overlay)[];
+    ): mapkit.Annotation | mapkit.Overlay | Array<mapkit.Annotation | mapkit.Overlay>;
     /**
      * Overrides a polygon.
      *
@@ -99,7 +99,7 @@ declare namespace mapkit {
     itemForPolygon?(
       overlay: mapkit.PolygonOverlay,
       geoJSON: object,
-    ): mapkit.Annotation | mapkit.Overlay | (mapkit.Annotation | mapkit.Overlay)[];
+    ): mapkit.Annotation | mapkit.Overlay | Array<mapkit.Annotation | mapkit.Overlay>;
     /**
      * Overrides a multipolygon.
      *
@@ -110,7 +110,7 @@ declare namespace mapkit {
     itemForMultiPolygon?(
       itemCollection: ItemCollection,
       geoJSON: object,
-    ): mapkit.Annotation | mapkit.Overlay | (mapkit.Annotation | mapkit.Overlay)[];
+    ): mapkit.Annotation | mapkit.Overlay | Array<mapkit.Annotation | mapkit.Overlay>;
     /**
      * Overrides the style of overlays.
      *
@@ -146,10 +146,10 @@ declare namespace mapkit {
     /**
      * A flattened array of items that include annotations or overlays.
      */
-    getFlattenedItemList: (mapkit.Annotation | mapkit.Overlay)[];
+    getFlattenedItemList: Array<mapkit.Annotation | mapkit.Overlay>;
     /**
      * A nested list of annotations, overlays, or other item collections.
      */
-    items: (mapkit.Annotation | mapkit.Overlay | ItemCollection)[];
+    items: Array<mapkit.Annotation | mapkit.Overlay | ItemCollection>;
   }
 }

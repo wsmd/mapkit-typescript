@@ -159,7 +159,7 @@ declare namespace mapkit {
      * Adjusts the maps visible region to bring the specified overlays and
      * annotations into view.
      */
-    showItems<I = (mapkit.Annotation | mapkit.Overlay)[]>(
+    showItems<I = Array<mapkit.Annotation | mapkit.Overlay>>(
       items: I,
       options?: MapShowItemsOptions,
     ): I;
@@ -404,10 +404,10 @@ declare namespace mapkit {
    */
   const maps: Map[];
 
-  type EventBase<T> = {
+  interface EventBase<T> {
     type: string;
     target: T;
-  };
+  }
 
   interface UserLocationEvents<T> {
     'user-location-change': EventBase<T> & { coordinate: Coordinate; timestamp: Date };
