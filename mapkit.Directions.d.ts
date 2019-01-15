@@ -13,7 +13,7 @@ declare namespace mapkit {
      * @param An object containing the options for creating a directions object.
      * This parameter is optional.
      */
-    constructor(options?: Partial<DirectionsConstructorOptions>);
+    constructor(options?: DirectionsConstructorOptions);
     /**
      * Retrieves directions and estimated travel time for the specified start
      * and end points.
@@ -45,7 +45,7 @@ declare namespace mapkit {
     /**
      * A language ID that determines the language for route information.
      */
-    language: string;
+    language?: string;
   }
 
   /**

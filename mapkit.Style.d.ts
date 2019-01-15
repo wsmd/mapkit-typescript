@@ -11,7 +11,7 @@ declare namespace mapkit {
     /**
      * Creates and initializes a style object.
      */
-    constructor(options?: Partial<StyleConstructorOptions>);
+    constructor(options?: StyleConstructorOptions);
     /**
      * The fill color of a shape.
      */
@@ -61,42 +61,42 @@ declare namespace mapkit {
     /**
      * The fill color of a shape.
      */
-    fillColor: string;
+    fillColor?: string;
     /**
      * The opacity of the fill color.
      */
-    fillOpacity: number;
+    fillOpacity?: number;
     /**
      * A rule for determining whether a point is inside or outside a polygon.
      */
-    fillRule: string;
+    fillRule?: string;
     /**
      * The style to use when drawing line endings.
      */
-    lineCap: string;
+    lineCap?: string;
     /**
      * An array of line and gap lengths, used to create a dashed line.
      */
-    lineDash: number[];
+    lineDash?: number[];
     /**
      * The number of CSS pixels to offset drawing of a line's dash pattern.
      */
-    lineDashOffset: number;
+    lineDashOffset?: number;
     /**
      * The style to use when drawing joins between line segments.
      */
-    lineJoin: string;
+    lineJoin?: string;
     /**
      * The width of a line's stroke, in CSS pixels.
      */
-    lineWidth: number;
+    lineWidth?: number;
     /**
      * The stroke color of a line.
      */
-    strokeColor: string;
+    strokeColor?: string;
     /**
      * The opacity of the stroke color.
      */
-    strokeOpacity: number;
+    strokeOpacity?: number;
   }
 }

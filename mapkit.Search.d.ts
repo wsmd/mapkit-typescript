@@ -12,7 +12,7 @@ declare namespace mapkit {
      *
      * @param options Options that you may provide when creating a search object.
      */
-    constructor(options?: Partial<SearchConstructorOptions>);
+    constructor(options?: SearchConstructorOptions);
     /**
      * Retrieves the results of a search query.
      *
@@ -57,20 +57,20 @@ declare namespace mapkit {
     /**
      * A language ID that determines the language for the search result text.
      */
-    language: string;
+    language?: string;
     /**
      * A Boolean value that indicates whether to limit the search results to the
      * user's current location, as determined by the web browser.
      */
-    getsUserLocation: boolean;
+    getsUserLocation?: boolean;
     /**
      * A map coordinate that provides a hint for the geographic area to search.
      */
-    coordinate: mapkit.Coordinate;
+    coordinate?: mapkit.Coordinate;
     /**
      * A map region that provides a hint for the geographic area to search.
      */
-    region: mapkit.CoordinateRegion;
+    region?: mapkit.CoordinateRegion;
   }
 
   type SearchCallback<Q> = (

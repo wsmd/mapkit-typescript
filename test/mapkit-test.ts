@@ -167,3 +167,65 @@ var height = mapRect.size.height; // 0.4
 var mapSize = new mapkit.MapSize(0.3, 0.4);
 var width = mapSize.width; // 0.3
 var height = mapSize.height; // 0.4
+
+var people = [
+  {
+    title: 'John Appleseed',
+    coordinate: new mapkit.Coordinate(37.3349, -122.0090201),
+    role: 'developer',
+    building: 'HQ',
+  },
+  {
+    title: 'Anne Johnson',
+    coordinate: new mapkit.Coordinate(37.722319, -122.434979),
+    role: 'manager',
+    building: 'HQ',
+  },
+];
+
+var factory = function(
+  coordinate: mapkit.Coordinate,
+  options: mapkit.AnnotationConstructorOptions,
+) {
+  var div = document.createElement('div'),
+    name = options.title, // "John Appleseed"
+    parts = (name as string).split(' '); // ["John", "Appleseed"]
+  div.textContent = parts[0].charAt(0) + parts[1].charAt(0); // "JA"
+  div.className = 'circle-annotation';
+  return div;
+};
+
+people.forEach(function(person) {
+  var options = {
+    title: person.title,
+    data: { role: person.role, building: person.building },
+  };
+  var annotation = new mapkit.Annotation(person.coordinate, factory, options);
+  map.addAnnotation(annotation);
+});
+
+var portland = new mapkit.Coordinate(45.5231, -122.6765);
+var customMarker = new mapkit.MarkerAnnotation(portland, {
+  color: 'green',
+  glyphColor: 'brown',
+  glyphImage: { 1: 'glyphImage.png' },
+  selectedGlyphImage: { 1: 'detailedIcon.png', 2: 'detailedIcon_2x.png', 3: 'detailedIcon_3x.png' },
+});
+
+var calloutDelegate = {
+  calloutRightAccessoryForAnnotation: function() {
+    var accessoryViewRight = document.createElement('a');
+    accessoryViewRight.className = 'right-accessory-view';
+    accessoryViewRight.href = 'https://www.nps.gov/stli/index.htm';
+    accessoryViewRight.target = '_blank';
+    accessoryViewRight.appendChild(document.createTextNode('ⓘ'));
+
+    return accessoryViewRight;
+  },
+};
+
+new mapkit.MarkerAnnotation(new mapkit.Coordinate(40.6892, -74.0445), {
+  title: 'Title',
+  subtitle: 'Subtitle',
+  callout: calloutDelegate,
+});

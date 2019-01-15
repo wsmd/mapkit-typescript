@@ -54,11 +54,7 @@ declare namespace mapkit {
      * @param options An object literal of Overlay properties used to initialize
      * the circle.
      */
-    constructor(
-      coordinate: mapkit.Coordinate,
-      radius: number,
-      options?: Partial<StylesOverlayOptions>,
-    );
+    constructor(coordinate: mapkit.Coordinate, radius: number, options?: StylesOverlayOptions);
     /**
      * The coordinate of the circle overlay's center.
      */
@@ -80,7 +76,7 @@ declare namespace mapkit {
      * @param options An object literal of style options with which to initialize
      * the polyline.
      */
-    constructor(points: mapkit.Coordinate[], options?: Partial<StylesOverlayOptions>);
+    constructor(points: mapkit.Coordinate[], options?: StylesOverlayOptions);
     /**
      * An array of coordinate points that define the polyline overlay's shape.
      */
@@ -100,7 +96,7 @@ declare namespace mapkit {
      * @param options An object literal of options with which to initialize the
      * polygon.
      */
-    constructor(points: mapkit.Coordinate[], options?: Partial<StylesOverlayOptions>);
+    constructor(points: mapkit.Coordinate[], options?: StylesOverlayOptions);
     /**
      * One or more arrays of coordinates that define the polygon overlay shape.
      */
@@ -111,26 +107,26 @@ declare namespace mapkit {
     /**
      * Custom data to associate with this overlay.
      */
-    data: object;
+    data?: object;
     /**
      * A Boolean value that determines if an overlay is visible.
      */
-    visible: boolean;
+    visible?: boolean;
     /**
      * A Boolean value that determines whether the overlay responds to user
      * interaction.
      */
-    enabled: boolean;
+    enabled?: boolean;
     /**
      * A Boolean value that indicates whether the overlay is selected.
      */
-    selected: boolean;
+    selected?: boolean;
   }
 
   /**
    * An observable set of style attributes for an overlay.
    */
   interface StylesOverlayOptions extends OverlayOptions {
-    style: mapkit.Style;
+    style?: mapkit.Style;
   }
 }

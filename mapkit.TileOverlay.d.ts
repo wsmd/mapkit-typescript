@@ -10,10 +10,7 @@ declare namespace mapkit {
     /**
      * Creates a tile overlay with a URL template and style options.
      */
-    constructor(
-      urlTemplate: string | URLTemplateCallback,
-      options?: Partial<TileOverlayConstructorOptions>,
-    );
+    constructor(urlTemplate: string | URLTemplateCallback, options?: TileOverlayConstructorOptions);
     /**
      * A string, or callback function that returns a string, with a URL that
      * provides the requested tile.
@@ -50,19 +47,19 @@ declare namespace mapkit {
     /**
      * Minimum zoom level of the overlay.
      */
-    minimumZ: number;
+    minimumZ?: number;
     /**
      * Maximum zoom level of the overlay.
      */
-    maximumZ: number;
+    maximumZ?: number;
     /**
      * Opacity level of the overlay.
      */
-    opacity: number;
+    opacity?: number;
     /**
      * Custom data used to populate the URL template.
      */
-    data: object;
+    data?: object;
   }
 
   type URLTemplateCallback = (

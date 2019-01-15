@@ -12,14 +12,14 @@ declare namespace mapkit {
      * Initialize a geocoder object and set optional language and user location
      * properties.
      */
-    constructor(options?: Partial<GeocoderConstructorOptions>);
+    constructor(options?: GeocoderConstructorOptions);
     /**
      * Converts an address to geographic coordinates.
      */
     lookup(
       place: string,
       callback: (error: Error | null, data: GeocoderResponse) => void,
-      options?: Partial<GeocoderLookupOptions>,
+      options?: GeocoderLookupOptions,
     ): number;
     /**
      * Converts a geographic coordinate to an address.
@@ -61,12 +61,12 @@ declare namespace mapkit {
      * A Boolean value that indicates whether the geocoder should return results
      * near the user's current location.
      */
-    language: string;
+    language?: string;
     /**
      * A Boolean value that indicates whether the geocoder should return results
      * near the user's current location.
      */
-    getsUserLocation: boolean;
+    getsUserLocation?: boolean;
   }
 
   /**
@@ -77,19 +77,19 @@ declare namespace mapkit {
     /**
      * The language in which to display the lookup results.
      */
-    language: string;
+    language?: string;
     /**
      * Coordinates used to constrain the lookup results.
      */
-    coordinate: mapkit.Coordinate;
+    coordinate?: mapkit.Coordinate;
     /**
      * A region in which to constrain lookup results.
      */
-    region: mapkit.CoordinateRegion;
+    region?: mapkit.CoordinateRegion;
     /**
      * A list of countries in which to constrain the lookup results.
      */
-    limitToCountries: string;
+    limitToCountries?: string;
   }
 
   /**

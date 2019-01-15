@@ -18,7 +18,7 @@ declare namespace mapkit {
     constructor(
       coordinate: mapkit.Coordinate,
       factory: (coordinate: mapkit.Coordinate, options: AnnotationConstructorOptions) => Element,
-      options?: Partial<AnnotationConstructorOptions>,
+      options?: AnnotationConstructorOptions,
     );
     /**
      * Adds an event listener to handle events triggered by user interactions
@@ -81,7 +81,7 @@ declare namespace mapkit {
     /**
      * Data that you define that is assigned to the annotation.
      */
-    data: object;
+    data: any;
     /**
      * The text to display in the annotation's callout.
      */
@@ -131,7 +131,7 @@ declare namespace mapkit {
     /**
      * A delegate that enables you to customize the annotation's callout.
      */
-    callout: Partial<AnnotationCalloutDelegate>;
+    callout: AnnotationCalloutDelegate;
     /**
      * An offset that changes the annotation callout's default placement.
      */
@@ -161,79 +161,77 @@ declare namespace mapkit {
     /**
      * The text to display in the annotation's callout.
      */
-    title: string;
+    title?: string;
     /**
      * The text to display as a subtitle on the second line of an annotation's
      * callout.
      */
-    subtitle: string;
+    subtitle?: string;
     /**
      * Accessibility text for the annotation.
      */
-    accessibilityLabel: string;
+    accessibilityLabel?: string;
     /**
      * Data you define that is assigned to the annotation.
      */
-    data: {
-      [key: string]: any;
-    };
+    data?: any;
     /**
      * A Boolean value that determines whether the user can drag the annotation.
      */
-    draggable: boolean;
+    draggable?: boolean;
     /**
      * A Boolean value that determines if the annotation is visible or hidden.
      */
-    visible: boolean;
+    visible?: boolean;
     /**
      * A Boolean value that determines whether the annotation responds to user
      * interaction.
      */
-    enabled: boolean;
+    enabled?: boolean;
     /**
      * A Boolean value that determines whether the annotation is selected.
      */
-    selected: boolean;
+    selected?: boolean;
     /**
      * A Boolean value that determines whether a callout should be shown.
      */
-    calloutEnabled: boolean;
+    calloutEnabled?: boolean;
     /**
      * A Boolean value that determines if the annotation should be animated.
      */
-    animates: boolean;
+    animates?: boolean;
     /**
      * A CSS animation that runs when the annotation appears on the map.
      */
-    appearanceAnimation: string;
+    appearanceAnimation?: string;
     /**
      * The offset in CSS pixels of the element from the bottom center.
      */
-    anchorOffset: DOMPoint;
+    anchorOffset?: DOMPoint;
     /**
      * The offset in CSS pixels of a callout from the top center of the element.
      */
-    calloutOffset: DOMPoint;
+    calloutOffset?: DOMPoint;
     /**
      * A delegate that enables you to customize the annotation's callout.
      */
-    callout: Partial<AnnotationCalloutDelegate>;
+    callout?: AnnotationCalloutDelegate;
     /**
      * The desired dimensions of the annotation, in CSS pixels.
      */
-    size: { width: number; height: number };
+    size?: { width: number; height: number };
     /**
      * A hint the map uses to prioritize displaying the annotation.
      */
-    displayPriority: number;
+    displayPriority?: number;
     /**
      * A mode that determines the shape of the collision frame.
      */
-    collisionMode: string;
+    collisionMode?: string;
     /**
      * An identifer used for grouping annotations into the same cluster.
      */
-    clusteringIdentifier: string;
+    clusteringIdentifier?: string;
   }
 
   /**
@@ -243,40 +241,40 @@ declare namespace mapkit {
     /**
      * Returns a point determining the callout's anchor offset.
      */
-    calloutAnchorOffsetForAnnotation(
+    calloutAnchorOffsetForAnnotation?(
       annotation: mapkit.Annotation,
       size: { width: number; height: number },
     ): DOMPoint;
     /**
      * Determines whether the callout should appear for an annotation.
      */
-    calloutShouldAppearForAnnotation(annotation: mapkit.Annotation): boolean;
+    calloutShouldAppearForAnnotation?(annotation: mapkit.Annotation): boolean;
     /**
      * Determines whether the callout should animate.
      */
-    calloutShouldAnimateForAnnotation(annotation: mapkit.Annotation): boolean;
+    calloutShouldAnimateForAnnotation?(annotation: mapkit.Annotation): boolean;
     /**
      * Returns a CSS animation used when the callout appears.
      */
-    calloutAppearanceAnimationForAnnotation(annotation: mapkit.Annotation): string;
+    calloutAppearanceAnimationForAnnotation?(annotation: mapkit.Annotation): string;
     /**
      * Returns custom content for the callout bubble.
      */
-    calloutContentForAnnotation(annotation: mapkit.Annotation): Element;
+    calloutContentForAnnotation?(annotation: mapkit.Annotation): Element;
     /**
      * Returns an element representing a custom callout.
      */
-    calloutElementForAnnotation(annotation: mapkit.Annotation): Element;
+    calloutElementForAnnotation?(annotation: mapkit.Annotation): Element;
     /**
      * Returns an element used as a custom accessory on the left side of the
      * callout content area.
      */
-    calloutLeftAccessoryForAnnotation(annotation: mapkit.Annotation): Element;
+    calloutLeftAccessoryForAnnotation?(annotation: mapkit.Annotation): Element;
     /**
      * Returns an element used as a custom accessory on the right side of the
      * callout content area.
      */
-    calloutRightAccessoryForAnnotation(annotation: mapkit.Annotation): Element;
+    calloutRightAccessoryForAnnotation?(annotation: mapkit.Annotation): Element;
   }
 
   /**
@@ -292,7 +290,7 @@ declare namespace mapkit {
   /**
    * An object containing options for initializing an image annotation.
    */
-  interface ImageAnnotationConstructorOptions extends Partial<AnnotationConstructorOptions> {
+  interface ImageAnnotationConstructorOptions extends AnnotationConstructorOptions {
     /**
      * An object containing URLs for the image assets in multiple resolutions.
      */
@@ -313,10 +311,7 @@ declare namespace mapkit {
      * @param coordinate The coordinate at which this annotation should appear.
      * @param options A hash of properties with which to initialize the annotation.
      */
-    constructor(
-      coordinate: mapkit.Coordinate,
-      options?: Partial<MarkerAnnotationConstructorOptions>,
-    );
+    constructor(coordinate: mapkit.Coordinate, options?: MarkerAnnotationConstructorOptions);
     /**
      * A value that determines the behavior of the subtitle's visibility.
      */
@@ -354,19 +349,19 @@ declare namespace mapkit {
     /**
      * The background color of the balloon.
      */
-    color: string;
+    color?: string;
     /**
      * The fill color of the glyph.
      */
-    glyphColor: string;
+    glyphColor?: string;
     /**
      * The text to display in the marker balloon.
      */
-    glyphText: string;
+    glyphText?: string;
     /**
      * The image to display in the marker balloon.
      */
-    glyphImage: {
+    glyphImage?: {
       1: string;
       2?: string;
       3?: string;
@@ -374,15 +369,15 @@ declare namespace mapkit {
     /**
      * The image to display in the balloon when the marker is selected.
      */
-    selectedGlyphImage: object;
+    selectedGlyphImage?: object;
     /**
      * A value that determines the behavior of the subtitle's visibility.
      */
-    subtitleVisibility: string;
+    subtitleVisibility?: string;
     /**
      * A value that determines the behavior of the title's visibility.
      */
-    titleVisibility: string;
+    titleVisibility?: string;
   }
 
   // prettier-ignore
