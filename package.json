@@ -3,16 +3,23 @@
   "version": "0.1.0",
   "description": "Typescript type definitions for MapKit JS",
   "repository": "wsmd/mapkit-typescript",
-  "types": "./index.d.ts",
+  "author": "Waseem Dahman <dwaseem@icloud.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wsmd/mapkit-typescript/issues"
   },
   "scripts": {
-    "test": "tsc",
+    "lint": "tslint **/*.d.ts",
+    "test": "npm run typecheck && npm run lint",
+    "typecheck": "tsc",
+    "typecheck:dev": "tsc --watch",
     "touch": "./scripts/create-file"
   },
-  "author": "Waseem Dahman <dwaseem@icloud.com>",
-  "license": "MIT",
+  "types": "./index.d.ts",
+  "files": [
+    "types",
+    "index.d.ts"
+  ],
   "keywords": [
     "Apple",
     "MapKit.d.ts",
@@ -22,6 +29,7 @@
     "typings"
   ],
   "devDependencies": {
+    "tslint": "^5.12.1",
     "typescript": "^3.2.2"
   }
 }
