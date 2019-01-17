@@ -30,12 +30,23 @@ declare namespace mapkit {
     ): number;
     /**
      * Cancels a previous request for route directions.
+     *
+     * @param id The ID returned by a call to route.
      */
-    // cancel();
+    cancel(id: number): boolean;
     /**
      * The modes of transportation.
      */
-    static readonly Transport: TransportType;
+    static readonly Transport: {
+      /**
+       * A constant identifying the mode of transportation as driving.
+       */
+      readonly Automobile: string;
+      /**
+       * A constant identifying the mode of transportation as walking.
+       */
+      readonly Walking: string;
+    };
   }
 
   /**
@@ -46,20 +57,6 @@ declare namespace mapkit {
      * A language ID that determines the language for route information.
      */
     language?: string;
-  }
-
-  /**
-   * The modes of transportation.
-   */
-  interface TransportType {
-    /**
-     * A constant identifying the mode of transportation as driving.
-     */
-    readonly Automobile: string;
-    /**
-     * A constant identifying the mode of transportation as walking.
-     */
-    readonly Walking: string;
   }
 
   /**
@@ -77,7 +74,7 @@ declare namespace mapkit {
     /**
      * The mode of transportation to which directions should apply.
      */
-    transportType?: TransportType[keyof TransportType];
+    transportType?: string;
     /**
      * A Boolean value that indicates whether the server should return multiple
      * routes when they are available.
@@ -126,7 +123,7 @@ declare namespace mapkit {
     /**
      * The overall route transport type.
      */
-    transportType: TransportType[keyof TransportType];
+    transportType: string;
   }
 
   /**
@@ -148,6 +145,6 @@ declare namespace mapkit {
     /**
      * The transport type of the step.
      */
-    transportType: TransportType[keyof TransportType];
+    transportType: string;
   }
 }
