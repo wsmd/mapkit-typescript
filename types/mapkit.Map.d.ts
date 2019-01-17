@@ -110,6 +110,59 @@ declare namespace mapkit {
     // Configuring the Map's Appearance
 
     /**
+     * Constants indicating the color scheme of the map.
+     */
+    static readonly ColorSchemes: {
+      /**
+       * A constant indicating a light color scheme.
+       */
+      readonly Light: string;
+      /**
+       * A constant indicating a dark color scheme.
+       */
+      readonly Dark: string;
+    };
+    /**
+     * Constants representing the type of map to display.
+     */
+    static readonly MapTypes: {
+      /**
+       * A street map that shows the position of all roads and some road names.
+       */
+      readonly Standard: string;
+      /**
+       * A street map where your data is emphasized over the underlying map details.
+       */
+      readonly MutedStandard: string;
+      /**
+       * A satellite image of the area with road and road name information
+       * layered on top.
+       */
+      readonly Hybrid: string;
+      /**
+       * A satellite image of the area.
+       */
+      readonly Satellite: string;
+    };
+    /**
+     * Constants indicating the system of measurement displayed on the map.
+     */
+    static readonly Distances: {
+      /**
+       * A constant indicating the measurement system is adaptive, and determined
+       * based on the map's language.
+       */
+      readonly Adaptive: string;
+      /**
+       * A constant indicating the measurement system is imperial.
+       */
+      readonly Imperial: string;
+      /**
+       * A constant indicating the measurement system is metric.
+       */
+      readonly Metric: string;
+    };
+    /**
      * The map’s color scheme when displaying standard or muted standard map types.
      */
     colorScheme: string;

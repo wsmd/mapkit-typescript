@@ -21,17 +21,14 @@ declare namespace mapkit {
      * The height value, in map point units.
      */
     height: number;
-
     /**
      * The width value, in map point units.
      */
     width: number;
-
     /**
      * Returns a copy of a map size.
      */
     copy(): MapSize;
-
     /**
      * Indicates whether two map sizes are equal.
      *
