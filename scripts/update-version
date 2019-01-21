@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for file in `find . -regex '\./.*\.d\.ts' -not -path './node_modules/*'`; do
+  sed -i '' -E "1s/([0-9]{1,}\.?){1,}/$1/" $file
+  echo "updated: $file"
+done
