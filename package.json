@@ -12,14 +12,17 @@
   "scripts": {
     "lint": "tslint **/*.d.ts",
     "test": "npm run typecheck && npm run lint",
-    "typecheck": "tsc",
-    "typecheck:dev": "tsc --watch",
-    "touch": "./scripts/create-file"
+    "typecheck": "tsc --noEmit",
+    "typecheck:dev": "tsc --noEmit --watch",
+    "touch": "./scripts/create-file",
+    "prepack": "npm run test"
   },
   "types": "./index.d.ts",
   "files": [
     "types",
-    "index.d.ts"
+    "index.d.ts",
+    "tsconfig.json",
+    "NOTICE"
   ],
   "keywords": [
     "Apple",
