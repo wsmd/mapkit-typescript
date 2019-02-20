@@ -1,8 +1,14 @@
+[![Build Status](https://travis-ci.org/wsmd/mapkit-typescript.svg?branch=master)](https://travis-ci.org/wsmd/mapkit-typescript)
+[![License](https://img.shields.io/github/license/wsmd/mapkit-typescript.svg)](https://github.com/wsmd/mapkit-typescript/blob/master/LICENSE)
+[![Current Release](https://img.shields.io/npm/v/mapkit-typescript.svg)](https://www.npmjs.com/package/mapkit-typescript)
+
 # mapkit-typescript
 
 TypeScript type definitions for [MapKit JS](https://developer.apple.com/documentation/mapkitjs).
 
 ## Installation
+
+First, install the types in your project:
 
 ```sh
 # using npm
@@ -12,15 +18,23 @@ npm install --save-dev mapkit-typescript
 yarn add --dev mapkit-typescript
 ```
 
-In the `tsconfig.json` file, add `mapkit-typescript` to the list of type declarations to include in the complication:
+Then, add `node_modules/mapkit-typescript` to your `tsconifg.json` file like so:
 
+<!-- prettier-ignore -->
 ```json
 {
   "compilerOptions": {
-    "types": ["mapkit-typescript"]
+    "typeRoots": [
+      "node_modules/mapkit-typescript",
+      "node_modules/@types"
+    ]
   }
 }
 ```
+
+This will enable the TypeScript compiler to find and use this typing since it is not installed under `node_modules/@types`.
+
+By default the compiler only looks at `node_modules/@types` for type declarations. If `typeRoots` does not already exist in the `tsconfig.json` file, make sure to include `node_modules/@types` as well.
 
 ## Legal
 
