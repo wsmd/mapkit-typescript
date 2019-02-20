@@ -8,5 +8,5 @@
     "target": "es6",
     "types": []
   },
-  "files": ["index.d.ts", "test/mapkit-test.ts"]
+  "files": ["mapkit/index.d.ts", "test/mapkit-test.ts"]
 }

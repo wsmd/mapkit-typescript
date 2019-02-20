@@ -1,9 +1,9 @@
 #!/bin/bash
 
 file="mapkit.$1.d.ts"
-index="index.d.ts"
+index="mapkit/index.d.ts"
 
-cat <<EOT >> $file
+cat <<EOT >> mapkit/$file
 $(head -3 $index)
 
 declare namespace mapkit {
@@ -11,4 +11,4 @@ declare namespace mapkit {
 }
 EOT
 
-echo "/// <reference path=\"./$file\" />" >> $index
+echo "/// <reference path=\"$file\" />" >> $index

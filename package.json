@@ -3,6 +3,7 @@
   "version": "5.13.0",
   "description": "Typescript type definitions for MapKit JS",
   "repository": "wsmd/mapkit-typescript",
+  "types": "./mapkit/index.d.ts",
   "homepage": "https://github.com/wsmd/mapkit-typescript",
   "author": "Waseem Dahman <dwaseem@icloud.com>",
   "license": "MIT",
@@ -17,15 +18,13 @@
     "touch": "./scripts/create-file",
     "prepack": "npm run test"
   },
-  "types": "./index.d.ts",
   "files": [
-    "types",
-    "index.d.ts",
-    "tsconfig.json",
+    "mapkit",
     "NOTICE"
   ],
   "keywords": [
     "Apple",
+    "apple-maps",
     "MapKit.d.ts",
     "MapKit",
     "types",
