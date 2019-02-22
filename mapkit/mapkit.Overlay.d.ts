@@ -11,7 +11,7 @@ declare namespace mapkit {
      * Starts listening for the specified type of event.
      */
     addEventListener(
-      type: OverlayEvent,
+      type: OverlayEventType,
       listener: (event: EventBase<this>) => void,
       thisObject?: object,
     ): void;
@@ -19,7 +19,7 @@ declare namespace mapkit {
      * Stops listening for the specified type of event.
      */
     removeEventListener(
-      type: OverlayEvent,
+      type: OverlayEventType,
       listener: (event: EventBase<this>) => void,
       thisObject?: object,
     ): void;
@@ -138,5 +138,5 @@ declare namespace mapkit {
     style?: mapkit.Style;
   }
 
-  type OverlayEvent = 'select' | 'deselect';
+  type OverlayEventType = 'select' | 'deselect';
 }

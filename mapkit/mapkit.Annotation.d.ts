@@ -31,7 +31,7 @@ declare namespace mapkit {
      * listener function.
      */
     addEventListener(
-      type: AnnotationEvent,
+      type: AnnotationEventType,
       listener: (event: EventBase<Map>) => void,
       thisObject?: object,
     ): void;
@@ -45,7 +45,7 @@ declare namespace mapkit {
      * function.
      */
     removeEventListener(
-      type: AnnotationEvent,
+      type: AnnotationEventType,
       listener: (event: EventBase<Map>) => void,
       thisObject?: object,
     ): void;
@@ -380,5 +380,11 @@ declare namespace mapkit {
     titleVisibility?: string;
   }
 
-  type AnnotationEvent = 'select' | 'deselect' | 'drag-start' | 'dragging' | 'drag-end';
+  // prettier-ignore
+  type AnnotationEventType =
+    | 'select'
+    | 'deselect'
+    | 'drag-start'
+    | 'dragging'
+    | 'drag-end';
 }
