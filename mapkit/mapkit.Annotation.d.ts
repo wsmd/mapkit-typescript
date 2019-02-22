@@ -30,9 +30,9 @@ declare namespace mapkit {
      * @param thisObject An object to be set as the this keyword on the
      * listener function.
      */
-    addEventListener<K extends keyof AnnotationEvents<this>>(
+    addEventListener<K extends keyof AnnotationEvents<Map>>(
       type: K,
-      listener: () => void,
+      listener: (event: AnnotationEvents<Map>[K]) => void,
       thisObject?: object,
     ): void;
     /**
@@ -46,7 +46,7 @@ declare namespace mapkit {
      */
     removeEventListener<K extends keyof AnnotationEvents<this>>(
       type: K,
-      listener: () => void,
+      listener: (event: AnnotationEvents<Map>[K]) => void,
       thisObject?: object,
     ): void;
     /**
@@ -382,10 +382,10 @@ declare namespace mapkit {
 
   // prettier-ignore
   interface AnnotationEvents<T> {
-    'select': EventBase<T> & { annotation: Annotation; overlay: Overlay };
-    'deselect': EventBase<T> & { annotation: Annotation; overlay: Overlay };
-    'drag-start': EventBase<T> & { annotation: Annotation };
-    'dragging': EventBase<T> & { annotation: Annotation; coordinate: Coordinate };
-    'drag-end': EventBase<T> & { annotation: Annotation };
+    'select': EventBase<T>;
+    'deselect': EventBase<T>;
+    'drag-start': EventBase<T>;
+    'dragging': EventBase<T>;
+    'drag-end': EventBase<T>;
   }
 }

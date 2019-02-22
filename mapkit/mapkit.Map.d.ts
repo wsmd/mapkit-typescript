@@ -462,12 +462,8 @@ declare namespace mapkit {
     target: T;
   }
 
-  interface UserLocationEvents<T> {
-    'user-location-change': EventBase<T> & { coordinate: Coordinate; timestamp: Date };
-    'user-location-error': EventBase<T> & { code: number; message: string };
-  }
-
-  interface MapEvents<T> extends AnnotationEvents<T>, UserLocationEvents<T> {
+  // prettier-ignore
+  interface MapEvents<T> {
     'region-change-start': EventBase<T>;
     'region-change-end': EventBase<T>;
     'scroll-start': EventBase<T>;
@@ -475,6 +471,19 @@ declare namespace mapkit {
     'zoom-start': EventBase<T>;
     'zoom-end': EventBase<T>;
     'map-type-change': EventBase<T>;
+
+    // Annotation Events
+
+    'select': EventBase<T> & { annotation: Annotation; overlay: Overlay };
+    'deselect': EventBase<T> & { annotation: Annotation; overlay: Overlay };
+    'drag-start': EventBase<T> & { annotation: Annotation };
+    'dragging': EventBase<T> & { annotation: Annotation; coordinate: Coordinate };
+    'drag-end': EventBase<T> & { annotation: Annotation };
+
+    // User Location Events
+
+    'user-location-change': EventBase<T> & { coordinate: Coordinate; timestamp: Date };
+    'user-location-error': EventBase<T> & { code: number; message: string };
   }
 
   /**
