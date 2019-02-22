@@ -249,3 +249,9 @@ new mapkit.MarkerAnnotation(new mapkit.Coordinate(40.6892, -74.0445), {
   subtitle: 'Subtitle',
   callout: calloutDelegate,
 });
+
+const overlay = new mapkit.CircleOverlay(coordinate, 1000);
+
+overlay.addEventListener('select', event => {
+  let radius: number = event.target.radius;
+});

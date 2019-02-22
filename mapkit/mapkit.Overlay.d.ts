@@ -10,11 +10,19 @@ declare namespace mapkit {
     /**
      * Starts listening for the specified type of event.
      */
-    addEventListener(type: string, listener: () => {}, thisObject?: object): void;
+    addEventListener(
+      type: OverlayEvent,
+      listener: (event: EventBase<this>) => void,
+      thisObject?: object,
+    ): void;
     /**
      * Stops listening for the specified type of event.
      */
-    addEventListener(type: string, listener: () => {}, thisObject?: object): void;
+    removeEventListener(
+      type: OverlayEvent,
+      listener: (event: EventBase<this>) => void,
+      thisObject?: object,
+    ): void;
     /**
      * Custom data to associate with this overlay.
      */
@@ -129,4 +137,6 @@ declare namespace mapkit {
   interface StylesOverlayOptions extends OverlayOptions {
     style?: mapkit.Style;
   }
+
+  type OverlayEvent = 'select' | 'deselect';
 }
