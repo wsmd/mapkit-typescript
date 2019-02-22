@@ -13,6 +13,16 @@ mapkit.addEventListener('configuration-change', event => {
 
 const map = new mapkit.Map(document.createElement('div'));
 
+map.addEventListener('select', event => {
+  const annotations: mapkit.Annotation[] = event.target.annotations;
+  if (event.annotation) {
+    const annotation: mapkit.Annotation = event.annotation;
+  }
+  if (event.overlay) {
+    const overlay: mapkit.Overlay = event.overlay;
+  }
+});
+
 mapkit.removeEventListener('configuration-change', () => {});
 
 const annotation = new mapkit.ImageAnnotation(new mapkit.Coordinate(1, 1), {
@@ -201,6 +211,26 @@ people.forEach(function(person) {
     data: { role: person.role, building: person.building },
   };
   var annotation = new mapkit.Annotation(person.coordinate, factory, options);
+  annotation.addEventListener('deselect', event => {
+    let map: mapkit.Map = event.target;
+    let type: string = event.type;
+  });
+  annotation.addEventListener('select', event => {
+    let map: mapkit.Map = event.target;
+    let type: string = event.type;
+  });
+  annotation.addEventListener('dragging', event => {
+    let map: mapkit.Map = event.target;
+    let type: string = event.type;
+  });
+  annotation.addEventListener('drag-end', event => {
+    let map: mapkit.Map = event.target;
+    let type: string = event.type;
+  });
+  annotation.addEventListener('drag-start', event => {
+    let map: mapkit.Map = event.target;
+    let type: string = event.type;
+  });
   map.addAnnotation(annotation);
 });
 
@@ -228,4 +258,10 @@ new mapkit.MarkerAnnotation(new mapkit.Coordinate(40.6892, -74.0445), {
   title: 'Title',
   subtitle: 'Subtitle',
   callout: calloutDelegate,
+});
+
+const overlay = new mapkit.CircleOverlay(coordinate, 1000);
+
+overlay.addEventListener('select', event => {
+  let radius: number = event.target.radius;
 });
