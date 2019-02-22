@@ -13,6 +13,16 @@ mapkit.addEventListener('configuration-change', event => {
 
 const map = new mapkit.Map(document.createElement('div'));
 
+map.addEventListener('select', event => {
+  const annotations: mapkit.Annotation[] = event.target.annotations;
+  if (event.annotation) {
+    const annotation: mapkit.Annotation = event.annotation;
+  }
+  if (event.overlay) {
+    const overlay: mapkit.Overlay = event.overlay;
+  }
+});
+
 mapkit.removeEventListener('configuration-change', () => {});
 
 const annotation = new mapkit.ImageAnnotation(new mapkit.Coordinate(1, 1), {

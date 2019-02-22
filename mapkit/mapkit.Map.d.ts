@@ -474,8 +474,8 @@ declare namespace mapkit {
 
     // Annotation Events
 
-    'select': EventBase<T> & { annotation: Annotation; overlay: Overlay };
-    'deselect': EventBase<T> & { annotation: Annotation; overlay: Overlay };
+    'select': EventBase<T> & { annotation?: Annotation; overlay?: Overlay };
+    'deselect': EventBase<T> & { annotation?: Annotation; overlay?: Overlay };
     'drag-start': EventBase<T> & { annotation: Annotation };
     'dragging': EventBase<T> & { annotation: Annotation; coordinate: Coordinate };
     'drag-end': EventBase<T> & { annotation: Annotation };
