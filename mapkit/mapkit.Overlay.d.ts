@@ -11,16 +11,16 @@ declare namespace mapkit {
      * Starts listening for the specified type of event.
      */
     addEventListener<T>(
-      type: mapkit.OverlayEventType,
-      listener: (event: mapkit.EventBase<this>) => void,
+      type: OverlayEventType,
+      listener: (event: EventBase<this>) => void,
       thisObject?: T,
     ): void;
     /**
      * Stops listening for the specified type of event.
      */
     removeEventListener<T>(
-      type: mapkit.OverlayEventType,
-      listener: (event: mapkit.EventBase<this>) => void,
+      type: OverlayEventType,
+      listener: (event: EventBase<this>) => void,
       thisObject?: T,
     ): void;
     /**
