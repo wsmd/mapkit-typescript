@@ -18,10 +18,10 @@ declare namespace mapkit {
    * Event as its sole argument.
    * @param thisObject An object set as the this keyword on the listener function.
    */
-  function addEventListener(
+  function addEventListener<T>(
     type: InitializationEventType,
-    listener: (event: InitializationEvent) => void,
-    thisObject?: object,
+    listener: (this: T, event: InitializationEvent) => void,
+    thisObject?: T,
   ): void;
   /**
    * Unsubscribes a listener function from an event type.
@@ -30,10 +30,10 @@ declare namespace mapkit {
    * @param listener The callback function to remove.
    * @param thisObject An object set as the this keyword on the listener function.
    */
-  function removeEventListener(
+  function removeEventListener<T>(
     type: InitializationEventType,
-    listener: (event: InitializationEvent) => void,
-    thisObject?: object,
+    listener: (this: T, event: InitializationEvent) => void,
+    thisObject?: T,
   ): void;
   /**
    * A language ID indicating the selected language.

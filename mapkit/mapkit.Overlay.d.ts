@@ -10,18 +10,18 @@ declare namespace mapkit {
     /**
      * Starts listening for the specified type of event.
      */
-    addEventListener(
+    addEventListener<T>(
       type: OverlayEventType,
       listener: (event: EventBase<this>) => void,
-      thisObject?: object,
+      thisObject?: T,
     ): void;
     /**
      * Stops listening for the specified type of event.
      */
-    removeEventListener(
+    removeEventListener<T>(
       type: OverlayEventType,
       listener: (event: EventBase<this>) => void,
-      thisObject?: object,
+      thisObject?: T,
     ): void;
     /**
      * Custom data to associate with this overlay.
