@@ -5,11 +5,16 @@ mapkit.init({
   language: 'en',
 });
 
-mapkit.addEventListener('configuration-change', event => {
-  if (event.status === 'Initialized') {
-    console.log('Initialized!');
-  }
-});
+mapkit.addEventListener(
+  'configuration-change',
+  function(event) {
+    if (event.status === 'Initialized') {
+      this.alert('Initialized');
+      console.log('Initialized!');
+    }
+  },
+  window,
+);
 
 const map = new mapkit.Map(document.createElement('div'));
 
@@ -227,10 +232,17 @@ people.forEach(function(person) {
     let map: mapkit.Map = event.target;
     let type: string = event.type;
   });
-  annotation.addEventListener('drag-start', event => {
-    let map: mapkit.Map = event.target;
-    let type: string = event.type;
-  });
+  annotation.addEventListener(
+    'drag-start',
+    function(event) {
+      let map: mapkit.Map = event.target;
+      let type: string = event.type;
+      let thisObject: { key: string } = this;
+    },
+    {
+      key: 'value',
+    },
+  );
   map.addAnnotation(annotation);
 });
 

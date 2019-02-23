@@ -30,10 +30,10 @@ declare namespace mapkit {
      * @param thisObject An object to be set as the this keyword on the
      * listener function.
      */
-    addEventListener(
+    addEventListener<T>(
       type: AnnotationEventType,
-      listener: (event: EventBase<Map>) => void,
-      thisObject?: object,
+      listener: (this: T, event: EventBase<Map>) => void,
+      thisObject?: T,
     ): void;
     /**
      * Adds an event listener to handle events triggered by user interactions
@@ -44,10 +44,10 @@ declare namespace mapkit {
      * @param thisObject An object to be set as the this keyword on the listener
      * function.
      */
-    removeEventListener(
+    removeEventListener<T>(
       type: AnnotationEventType,
-      listener: (event: EventBase<Map>) => void,
-      thisObject?: object,
+      listener: (this: T, event: EventBase<Map>) => void,
+      thisObject?: T,
     ): void;
     /**
      * Constant values used to provide a hint the map uses to prioritize
