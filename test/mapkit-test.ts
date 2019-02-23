@@ -28,6 +28,14 @@ map.addEventListener('select', event => {
   }
 });
 
+map.addEventListener(
+  'drag-end',
+  function(event) {
+    this.alert('drag ended');
+  },
+  window,
+);
+
 mapkit.removeEventListener('configuration-change', () => {});
 
 const annotation = new mapkit.ImageAnnotation(new mapkit.Coordinate(1, 1), {

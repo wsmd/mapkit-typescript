@@ -27,18 +27,18 @@ declare namespace mapkit {
      * @param thisObject An object to be set as the this keyword on the listener
      * function.
      */
-    addEventListener<K extends keyof MapEvents<this>>(
+    addEventListener<T, K extends keyof MapEvents<this>>(
       type: K,
-      listener: (event: MapEvents<this>[K]) => void,
-      thisObject?: object,
+      listener: (this: T, event: MapEvents<this>[K]) => void,
+      thisObject?: T,
     ): void;
     /**
      * Removes an event listener.
      */
-    removeEventListener<K extends keyof MapEvents<this>>(
+    removeEventListener<T, K extends keyof MapEvents<this>>(
       type: K,
-      listener: (event: MapEvents<this>[K]) => void,
-      thisObject?: object,
+      listener: (type: T, event: MapEvents<this>[K]) => void,
+      thisObject?: T,
     ): void;
     /**
      * Removes the map's element from the DOM and releases internal references to
