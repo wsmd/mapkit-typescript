@@ -471,6 +471,9 @@ declare namespace mapkit {
     'zoom-start': EventBase<T>;
     'zoom-end': EventBase<T>;
     'map-type-change': EventBase<T>;
+    'single-tap': EventBase<T>;
+    'double-tap': EventBase<T>;
+    'long-press': EventBase<T>;
 
     // Annotation Events
 
