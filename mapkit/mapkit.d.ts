@@ -86,6 +86,8 @@ declare namespace mapkit {
 
   type InitializationEventType = 'configuration-change' | 'error';
 
+  type MapType = 'hybrid' | 'satellite' | 'standard'
+  
   interface InitializationEvent {
     status: 'Initialized' | 'Refreshed' | 'Unauthorized' | 'Too Many Requests';
   }
