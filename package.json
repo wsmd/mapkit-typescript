@@ -1,6 +1,6 @@
 {
   "name": "mapkit-typescript",
-  "version": "5.18.0",
+  "version": "5.18.1",
   "description": "Typescript type definitions for MapKit JS",
   "repository": "wsmd/mapkit-typescript",
   "types": "./mapkit/index.d.ts",
