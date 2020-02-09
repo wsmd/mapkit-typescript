@@ -390,7 +390,7 @@ declare namespace mapkit {
     /**
      * A feature visibility setting that determines when the compass is visible.
      */
-    showsCompass?: boolean;
+    showsCompass?: string;
     /**
      * A Boolean value that determines whether the user may zoom in and out on
      * the map using pinch gestures or the zoom control.
