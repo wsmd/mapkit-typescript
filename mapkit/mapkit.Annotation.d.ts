@@ -32,7 +32,7 @@ declare namespace mapkit {
      */
     addEventListener<T>(
       type: AnnotationEventType,
-      listener: (this: T, event: EventBase<Map>) => void,
+      listener: (this: T, event: EventBase<Annotation>) => void,
       thisObject?: T,
     ): void;
     /**
@@ -46,7 +46,7 @@ declare namespace mapkit {
      */
     removeEventListener<T>(
       type: AnnotationEventType,
-      listener: (this: T, event: EventBase<Map>) => void,
+      listener: (this: T, event: EventBase<Annotation>) => void,
       thisObject?: T,
     ): void;
     /**
