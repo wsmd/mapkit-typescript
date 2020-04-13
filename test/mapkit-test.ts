@@ -225,25 +225,25 @@ people.forEach(function(person) {
   };
   var annotation = new mapkit.Annotation(person.coordinate, factory, options);
   annotation.addEventListener('deselect', event => {
-    let map: mapkit.Map = event.target;
+    let annotation: mapkit.Annotation = event.target;
     let type: string = event.type;
   });
   annotation.addEventListener('select', event => {
-    let map: mapkit.Map = event.target;
+    let annotation: mapkit.Annotation = event.target;
     let type: string = event.type;
   });
   annotation.addEventListener('dragging', event => {
-    let map: mapkit.Map = event.target;
+    let annotation: mapkit.Annotation = event.target;
     let type: string = event.type;
   });
   annotation.addEventListener('drag-end', event => {
-    let map: mapkit.Map = event.target;
+    let annotation: mapkit.Annotation = event.target;
     let type: string = event.type;
   });
   annotation.addEventListener(
     'drag-start',
     function(event) {
-      let map: mapkit.Map = event.target;
+      let annotation: mapkit.Annotation = event.target;
       let type: string = event.type;
       let thisObject: { key: string } = this;
     },
