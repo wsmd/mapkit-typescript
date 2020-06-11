@@ -39,7 +39,7 @@ declare namespace mapkit {
     autocomplete(
       query: string,
       callback: SearchDelegate | AutocompleteSearchCallback,
-      options?: SearchOptions,
+      options?: SearchAutocompleteOptions,
     ): void;
     /**
      * Cancels a search request using its request ID.
@@ -71,6 +71,11 @@ declare namespace mapkit {
      * A map region that provides a hint for the geographic area to search.
      */
     region?: mapkit.CoordinateRegion;
+
+    includeAddresses?: boolean;
+    includePointsOfInterest?: boolean;
+    includeQueries?: boolean;
+    pointOfInterestFilter?: PointOfInterestFilter;
   }
 
   type SearchCallback<Q> = (
@@ -137,6 +142,10 @@ declare namespace mapkit {
      * A map region that provides a hint for the geographic area to search.
      */
     region: mapkit.CoordinateRegion;
+
+    includeAddresses: boolean;
+    includePointsOfInterest: boolean;
+    pointOfInterestFilter: boolean;
   }
 
   /**
@@ -184,5 +193,15 @@ declare namespace mapkit {
      * The coordinate of the result, provided when it corresponds to a single place.
      */
     coordinate: mapkit.Coordinate;
+  }
+
+  interface SearchAutocompleteOptions {
+    language: string;
+    coordinate: mapkit.Coordinate;
+    region: mapkit.CoordinateRegion;
+    includeAddresses: boolean;
+    includePointsOfInterest: boolean;
+    includeQueries: boolean;
+    pointOfInterestFilter: mapkit.PointOfInterestFilter;
   }
 }

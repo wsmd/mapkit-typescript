@@ -106,6 +106,33 @@ declare namespace mapkit {
      * Changes the map's visible map rectangle to the specified map rectangle.
      */
     setVisibleMapRectAnimated(mapRect: mapkit.MapRect, animate?: boolean): this;
+    /**
+     * Sets a constraint for the center of the map.
+     */
+    cameraBoundary: CameraBoundaryDescription;
+    /**
+     * Changes the map's camera boundary with an animated transition.
+     */
+    setCameraBoundaryAnimated(
+      coordinateRegion: CoordinateRegion | MapRect,
+      animate?: boolean,
+    ): this;
+    /**
+     * Sets the altitude of the camera above the center of the map.
+     */
+    cameraDistance: number;
+    /**
+     * Changes the map's camera distance with an animated transition.
+     */
+    setCameraDistanceAnimated(distance: number, animate?: boolean): this;
+    /**
+     * Sets the minimum and maximum distance of the camera from the map center.
+     */
+    cameraZoomRange: CameraZoomRange;
+    /**
+     * Changes the map's camera zoom range with an animated transition.
+     */
+    setCameraZoomRangeAnimated(cameraZoomRange: CameraZoomRange, animate?: boolean): this;
 
     // Configuring the Map's Appearance
 
@@ -449,6 +476,8 @@ declare namespace mapkit {
      * A Boolean value that determines whether the user location control is visible.
      */
     showsUserLocationControl?: boolean;
+
+    pointOfInterestFilter?: mapkit.PointOfInterestFilter;
   }
 
   /**
@@ -506,5 +535,118 @@ declare namespace mapkit {
      * Spacing that is added around the computed map region when showing items.
      */
     minimumSpan?: mapkit.CoordinateSpan;
+  }
+
+  /**
+   * An object literal containing at least one property defining an area on the map.
+   */
+  interface CameraBoundaryDescription {
+   /**
+    * A rectangular area on a two-dimensional map projection.
+    */
+    mapRect: mapkit.MapRect;
+   /**
+    * A rectangular area on a map, defined by coordinates of the rectangle's
+    * northeast and southwest corners.
+    */
+    region: mapkit.CoordinateRegion;
+  }
+
+  /**
+   * A minimum and maximum camera distance as meters from the center of the map.
+   */
+  class CameraZoomRange {
+    /**
+     * Describes the minimum and maximum camera distance in meters.
+     *
+     * @parent parent A DOM element or the ID of a DOM element to use as this
+     * map's container.
+     * @param options An object that contains options for initializing a map's
+     * features.
+     */
+    constructor(
+      minCameraDistance: CameraZoomRangeConstructorOptions | number,
+      maxCameraDistance?: number,
+    );
+    /**
+     * The minimum allowed distance of the camera from the center of the map in
+     * meters.
+     */
+    minCameraDistance: number;
+    /**
+     * The maximum allowed distance of the camera from the center of the map in
+     * meters.
+     */
+    maxCameraDistance: number;
+  }
+
+  /**
+   * Initialization options for the camera zoom range.
+   */
+  interface CameraZoomRangeConstructorOptions {
+    /**
+     * The minimum allowed distance of the camera from the center of the map in
+     * meters.
+     */
+    minCameraDistance: number;
+    /**
+     * The maximum allowed distance of the camera from the center of the map in
+     * meters.
+     */
+    maxCameraDistance: number;
+  }
+
+  class PointOfInterestFilter {
+    private constructor();
+    static excludesCategory(category: PointOfInterestCategory): boolean;
+    static excluding(categoryList: PointOfInterestCategory[]): PointOfInterestFilter;
+    static includesCategory(category: PointOfInterestCategory): boolean;
+    static including(categoryList: PointOfInterestCategory[]): PointOfInterestFilter;
+
+    filterExcludingAllCategories: PointOfInterestFilter;
+    filterIncludingAllCategories: PointOfInterestFilter;
+  }
+
+  interface PointOfInterestCategory {
+    readonly Airport: string;
+    readonly AmusementPark: string;
+    readonly Aquarium: string;
+    readonly ATM: string;
+    readonly Bakery: string;
+    readonly Bank: string;
+    readonly Beach: string;
+    readonly Brewery: string;
+    readonly Cafe: string;
+    readonly Campground: string;
+    readonly CarRental: string;
+    readonly EVCharger: string;
+    readonly FireStation: string;
+    readonly FitnessCenter: string;
+    readonly FoodMarket: string;
+    readonly GasStation: string;
+    readonly Hospital: string;
+    readonly Hotel: string;
+    readonly Laundry: string;
+    readonly Library: string;
+    readonly Marina: string;
+    readonly MovieTheater: string;
+    readonly Museum: string;
+    readonly NationalPark: string;
+    readonly Nightlife: string;
+    readonly Park: string;
+    readonly Parking: string;
+    readonly Pharmacy: string;
+    readonly Police: string;
+    readonly PostOffice: string;
+    readonly PublicTransport: string;
+    readonly Restaurant: string;
+    readonly Restroom: string;
+    readonly School: string;
+    readonly Stadium: string;
+    readonly Store: string;
+    readonly Theater: string;
+    readonly University: string;
+    readonly Winery: string;
+    readonly Zoo: string;
   }
 }

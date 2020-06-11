@@ -80,6 +80,9 @@ declare namespace mapkit {
      * routes when they are available.
      */
     requestsAlternateRoutes?: boolean;
+
+    arrivalDate?: Date;
+    departureDate?: Date;
   }
 
   /**

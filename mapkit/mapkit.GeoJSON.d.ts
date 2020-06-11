@@ -30,7 +30,7 @@ declare namespace mapkit {
      * @param geoJSON The original GeoJSON object for this feature.
      */
     itemForFeature?(
-      item: mapkit.Annotation | mapkit.Overlay | null,
+      item: mapkit.Annotation | mapkit.Overlay | mapkit.ItemCollection | null,
       geoJSON: object,
     ): mapkit.Annotation | mapkit.Overlay | Array<mapkit.Annotation | mapkit.Overlay>;
     /**

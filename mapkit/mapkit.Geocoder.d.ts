@@ -123,5 +123,18 @@ declare namespace mapkit {
      * The country code associated with the place.
      */
     countryCode: string;
+
+    administrativeArea: string | undefined;
+    administrativeAreaCode: string | undefined;
+    areasOfInterest: string[] | undefined;
+    country: string | undefined;
+    dependentLocalities: string[] | undefined;
+    fullThoroughfare: string | undefined;
+    locality: string | undefined;
+    pointOfInterestCategory: PointOfInterestCategory;
+    postCode: string | undefined;
+    subLocality: string | undefined;
+    subThoroughfare: string | undefined;
+    thoroughfare: string | undefined;
   }
 }
