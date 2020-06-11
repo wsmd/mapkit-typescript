@@ -596,56 +596,57 @@ declare namespace mapkit {
     maxCameraDistance: number;
   }
 
-  interface PointOfInterestFilter {
-    excludesCategory(category: PointOfInterestCategory): boolean;
-    excluding(categoryList: PointOfInterestCategory[]): PointOfInterestFilter;
-    includesCategory(category: PointOfInterestCategory): boolean;
-    including(categoryList: PointOfInterestCategory[]): PointOfInterestFilter;
+  class PointOfInterestFilter {
+    private constructor();
+    static excludesCategory(category: PointOfInterestCategory): boolean;
+    static excluding(categoryList: PointOfInterestCategory[]): PointOfInterestFilter;
+    static includesCategory(category: PointOfInterestCategory): boolean;
+    static including(categoryList: PointOfInterestCategory[]): PointOfInterestFilter;
 
     filterExcludingAllCategories: PointOfInterestFilter;
     filterIncludingAllCategories: PointOfInterestFilter;
   }
 
   interface PointOfInterestCategory {
-    Airport: string;
-    AmusementPark: string;
-    Aquarium: string;
-    ATM: string;
-    Bakery: string;
-    Bank: string;
-    Beach: string;
-    Brewery: string;
-    Cafe: string;
-    Campground: string;
-    CarRental: string;
-    EVCharger: string;
-    FireStation: string;
-    FitnessCenter: string;
-    FoodMarket: string;
-    GasStation: string;
-    Hospital: string;
-    Hotel: string;
-    Laundry: string;
-    Library: string;
-    Marina: string;
-    MovieTheater: string;
-    Museum: string;
-    NationalPark: string;
-    Nightlife: string;
-    Park: string;
-    Parking: string;
-    Pharmacy: string;
-    Police: string;
-    PostOffice: string;
-    PublicTransport: string;
-    Restaurant: string;
-    Restroom: string;
-    School: string;
-    Stadium: string;
-    Store: string;
-    Theater: string;
-    University: string;
-    Winery: string;
-    Zoo: string;
+    readonly Airport: string;
+    readonly AmusementPark: string;
+    readonly Aquarium: string;
+    readonly ATM: string;
+    readonly Bakery: string;
+    readonly Bank: string;
+    readonly Beach: string;
+    readonly Brewery: string;
+    readonly Cafe: string;
+    readonly Campground: string;
+    readonly CarRental: string;
+    readonly EVCharger: string;
+    readonly FireStation: string;
+    readonly FitnessCenter: string;
+    readonly FoodMarket: string;
+    readonly GasStation: string;
+    readonly Hospital: string;
+    readonly Hotel: string;
+    readonly Laundry: string;
+    readonly Library: string;
+    readonly Marina: string;
+    readonly MovieTheater: string;
+    readonly Museum: string;
+    readonly NationalPark: string;
+    readonly Nightlife: string;
+    readonly Park: string;
+    readonly Parking: string;
+    readonly Pharmacy: string;
+    readonly Police: string;
+    readonly PostOffice: string;
+    readonly PublicTransport: string;
+    readonly Restaurant: string;
+    readonly Restroom: string;
+    readonly School: string;
+    readonly Stadium: string;
+    readonly Store: string;
+    readonly Theater: string;
+    readonly University: string;
+    readonly Winery: string;
+    readonly Zoo: string;
   }
 }
